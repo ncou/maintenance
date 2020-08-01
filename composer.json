@@ -30,7 +30,8 @@
         "chiron": {
             "bootloaders": [
                 "Chiron\\Maintenance\\Bootloader\\PublishMaintenanceBootloader",
-                "Chiron\\Maintenance\\Bootloader\\MaintenanceCommandBootloader"
+                "Chiron\\Maintenance\\Bootloader\\MaintenanceCommandBootloader",
+                "Chiron\\Maintenance\\Bootloader\\MaintenanceMiddlewareBootloader"
             ]
       }
     }
