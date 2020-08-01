@@ -51,6 +51,7 @@ final class MaintenanceMode
         $this->filesystem = $filesystem;
         $this->config = $config;
 
+        // TODO : définir ce chemin directement dans le fichier de config ???? (on ajouterai une balise "path => string" + une balise "details => [array]" avec le détail du retry/message/allowed) ????
         $this->path = directory('@runtime/framework/down.json');
     }
 
@@ -63,7 +64,8 @@ final class MaintenanceMode
      * @return bool
      */
     //// TODO : vérifier que la valeur retry est un int supérieur à 0 ou une string avec une regex pour valider le format de la date !!!! => utiliser la rexex suivante : https://github.com/sabre-io/http/blob/master/lib/functions.php#L34      +   formatter la date si si c'est un objet DateTime::class pour avoir la date formatée correctement.
-    public function on(string $message = '', array $allowedIpAddresses = [], ?int $secondsToRetry = null)
+    //public function on(string $message = '', array $allowedIpAddresses = [], ?int $secondsToRetry = null)
+    public function on()
     {
 /*
         if ($retryAfter instanceof DateTimeInterface) {
