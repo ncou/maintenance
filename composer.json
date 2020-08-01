@@ -1,0 +1,24 @@
+{
+    "name": "chiron/maintenance",
+    "description": "Maintenance package for Chiron framework",
+    "keywords": [],
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Chiron\\Maintenance\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chiron\\Maintenance\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "phpstan/phpstan": "^0.12.0"
+    }
+}
