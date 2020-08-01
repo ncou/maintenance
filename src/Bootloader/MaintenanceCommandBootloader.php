@@ -6,8 +6,8 @@ use Chiron\Boot\Directories;
 use Chiron\Bootload\AbstractBootloader;
 use Chiron\PublishableCollection;
 use Chiron\Console\Console;
-use Chiron\Console\Command\MaintenanceOnCommand;
-use Chiron\Console\Command\MaintenanceOffCommand;
+use Chiron\Maintenance\Command\MaintenanceOnCommand;
+use Chiron\Maintenance\Command\MaintenanceOffCommand;
 
 final class MaintenanceCommandBootloader extends AbstractBootloader
 {

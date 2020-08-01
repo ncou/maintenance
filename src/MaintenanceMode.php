@@ -29,7 +29,7 @@ use Chiron\Provider\RoadRunnerServiceProvider;
 use Chiron\Provider\ServerRequestCreatorServiceProvider;
 use Chiron\Container\SingletonInterface;
 
-use Chiron\Config\MaintenanceConfig;
+use Chiron\Maintenance\Config\MaintenanceConfig;
 use Chiron\Filesystem\Filesystem;
 
 // TODO : récupérer un template pour le site down ???? => https://github.com/tillkruss/framework/blob/66b75f481e6d5f5e24f320a7bba2e3104e702681/src/Illuminate/Foundation/Exceptions/views/503.blade.php
