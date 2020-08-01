@@ -18,7 +18,7 @@ class CheckMaintenanceMiddleware implements MiddlewareInterface
     /** @var MaintenanceMode */
     private $maintenance;
 
-// TODO : faire une classe de Facade pour la partie Maintenance
+    // TODO : faire une classe de Facade pour la partie Maintenance
     public function __construct(MaintenanceMode $maintenance)
     {
         $this->maintenance = $maintenance;
