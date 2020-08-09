@@ -26,6 +26,10 @@ use Chiron\Boot\Path;
 
 use Chiron\Maintenance\MaintenanceMode;
 
+use Chiron\Exception\ApplicationException;
+
+
+
 
 //https://github.com/awjudd/maintenance-mode/blob/master/src/MisterPhilip/MaintenanceMode/Console/Commands/StartMaintenanceCommand.php
 
@@ -49,13 +53,20 @@ final class MaintenanceOnCommand extends AbstractCommand
     //https://github.com/laravel/framework/blob/0b12ef19623c40e22eff91a4b48cb13b3b415b25/src/Illuminate/Foundation/Console/UpCommand.php#L29
     public function perform(MaintenanceMode $maintenance): int
     {
+        if ($maintenance->isOn()) {
+            $this->notice('Application is already down.');
 
-        // TODO : vérifier si l'application n'est pas déjà en mode de maintenance === on. Si c'est le cas lever une erreur !!!!
+            return self::SUCCESS;
+        }
 
-        // TODO : faire un try/catch autour de cet appel ? et afficher un $this->error() + retunr ERROR_CODE ????
-        $maintenance->on('DOWNNNNNNN !!!!!!');
+        try {
+            $maintenance->on();
+            $this->warning('Application is now in maintenance mode.');
+        } catch (ApplicationException $e) {
+            $this->error($e->getMessage());
 
-        $this->comment('Application is now in maintenance mode.');
+            return self::FAILURE;
+        }
 
         return self::SUCCESS;
     }

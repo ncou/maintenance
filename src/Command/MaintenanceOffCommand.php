@@ -21,11 +21,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use Chiron\Bootloader\EnvironmentBootloader;
-
 use Chiron\Boot\Path;
-
 use Chiron\Maintenance\MaintenanceMode;
 
+use Carbon\Carbon;
 
 //https://github.com/awjudd/maintenance-mode/blob/master/src/MisterPhilip/MaintenanceMode/Console/Commands/EndMaintenanceCommand.php#L22
 
@@ -46,14 +45,27 @@ final class MaintenanceOffCommand extends AbstractCommand
         $this->setDescription('Bring the application out of maintenance mode');
     }
 
-    //https://github.com/awjudd/maintenance-mode/blob/master/src/MisterPhilip/MaintenanceMode/Console/Commands/EndMaintenanceCommand.php#L22
-    //https://github.com/laravel/framework/blob/0b12ef19623c40e22eff91a4b48cb13b3b415b25/src/Illuminate/Foundation/Console/DownCommand.php#L38
     public function perform(MaintenanceMode $maintenance): int
     {
-        // TODO : faire un try/catch autour de cet appel ? et afficher un $this->error() + retunr ERROR_CODE ????
-        $maintenance->off();
+        if ($maintenance->isOff()) {
+            $this->notice('Application is already live.');
 
-        $this->info('Application is now live.');
+            return self::SUCCESS;
+        }
+
+        $details = $maintenance->getDetails();
+        $startingTime = Carbon::createFromTimestamp($details['time']);
+
+        try {
+            $maintenance->off();
+            // estimate the total downtime duration until "now".
+            $downTime = $startingTime->diffForHumans(null, true, true, 6);
+            $this->info(sprintf('Application is now live! Total downtime: %s.', $downTime));
+        } catch (ApplicationException $e) {
+            $this->error($e->getMessage());
+
+            return self::FAILURE;
+        }
 
         return self::SUCCESS;
     }

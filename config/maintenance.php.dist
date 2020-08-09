@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 return [
-	'message'		=> 'Unavailable for scheduled maintenance.',
-    'retry'			=> null,
-    'allowed'		=> [],
+    'storage_path' => directory('@runtime/framework/down.json'),
+    'maintenance'    => [
+        'message'     => 'Unavailable for scheduled maintenance.',
+        'retry_after' => null,
+        'allowed_ip'  => [],
+    ]
 ];
