@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Chiron\Maintenance\Command;
 
 use Chiron\Filesystem\Filesystem;
-use Chiron\Boot\Directories;
-use Chiron\Boot\Environment;
+use Chiron\Core\Directories;
+use Chiron\Core\Environment;
 use Chiron\Console\AbstractCommand;
 use Chiron\Encrypter\Config\EncrypterConfig;
 use Chiron\Support\Security;
@@ -21,8 +21,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use Chiron\Bootloader\EnvironmentBootloader;
-
-use Chiron\Boot\Path;
 
 use Chiron\Maintenance\MaintenanceMode;
 
