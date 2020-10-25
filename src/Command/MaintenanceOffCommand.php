@@ -8,7 +8,6 @@ use Chiron\Filesystem\Filesystem;
 use Chiron\Core\Directories;
 use Chiron\Core\Environment;
 use Chiron\Console\AbstractCommand;
-use Chiron\Support\Security;
 use Symfony\Component\Console\Input\InputOption;
 use Chiron\Application;
 use Chiron\Framework;
