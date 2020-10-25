@@ -3,7 +3,7 @@
 namespace Chiron\Maintenance\Bootloader;
 
 use Chiron\Core\Directories;
-use Chiron\Bootload\AbstractBootloader;
+use Chiron\Core\Container\Bootloader\AbstractBootloader;
 use Chiron\PublishableCollection;
 
 final class PublishMaintenanceBootloader extends AbstractBootloader

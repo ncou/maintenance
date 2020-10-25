@@ -3,7 +3,7 @@
 namespace Chiron\Maintenance\Bootloader;
 
 use Chiron\Core\Directories;
-use Chiron\Bootload\AbstractBootloader;
+use Chiron\Core\Container\Bootloader\AbstractBootloader;
 use Chiron\PublishableCollection;
 use Chiron\Console\Console;
 use Chiron\Maintenance\Command\MaintenanceOnCommand;

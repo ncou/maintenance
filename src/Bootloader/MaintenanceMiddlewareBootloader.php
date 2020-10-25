@@ -2,7 +2,7 @@
 
 namespace Chiron\Maintenance\Bootloader;
 
-use Chiron\Bootload\AbstractBootloader;
+use Chiron\Core\Container\Bootloader\AbstractBootloader;
 use Chiron\Http\MiddlewareQueue;
 use Chiron\Maintenance\Middleware\CheckMaintenanceMiddleware;
 

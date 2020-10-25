@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Chiron\Maintenance;
 
 use Chiron\Bootload\BootloaderInterface;
-use Chiron\Bootload\ServiceProvider\ServiceProviderInterface;
+use Chiron\Core\Container\Provider\ServiceProviderInterface;
 use Chiron\Dispatcher\DispatcherInterface;
 use Chiron\ErrorHandler\RegisterErrorHandler;
 use Chiron\Exception\ApplicationException;
