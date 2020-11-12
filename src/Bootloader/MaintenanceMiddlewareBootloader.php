@@ -3,14 +3,14 @@
 namespace Chiron\Maintenance\Bootloader;
 
 use Chiron\Core\Container\Bootloader\AbstractBootloader;
-use Chiron\Http\MiddlewareQueue;
+use Chiron\Http\Http;
 use Chiron\Maintenance\Middleware\CheckMaintenanceMiddleware;
 
 final class MaintenanceMiddlewareBootloader extends AbstractBootloader
 {
-    public function boot(MiddlewareQueue $middlewares): void
+    public function boot(Http $http): void
     {
         // add the maintenance middleware in the top position.
-        $middlewares->addMiddleware(CheckMaintenanceMiddleware::class, MiddlewareQueue::PRIORITY_HIGH);
+        $http->addMiddleware(CheckMaintenanceMiddleware::class, Http::PRIORITY_HIGH);
     }
 }
