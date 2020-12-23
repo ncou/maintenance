@@ -81,6 +81,7 @@ final class MaintenanceMode
             try {
                 $this->filesystem->replace($this->path, $json);
             } catch (FilesystemException $e) {
+                // TODO : créeret utiliser  une classe MaintenanceException
                 throw new ApplicationException(
                     sprintf('Maintenance mode could not be enabled because "%s" could not be created.',  $this->path),
                     $e->getCode(),
@@ -100,6 +101,7 @@ final class MaintenanceMode
             try {
                 $this->filesystem->unlink($this->path);
             } catch (FilesystemException $e) {
+                // TODO : créer et utiliser une classe MaintenanceException
                 throw new ApplicationException(
                     sprintf('Maintenance mode could not be disabled because "%s" could not be removed.',  $this->path),
                     $e->getCode(),
