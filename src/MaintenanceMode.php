@@ -17,7 +17,6 @@ use Chiron\Bootloader\ConfigureBootloader;
 use Chiron\Bootloader\DirectoriesBootloader;
 use Chiron\Bootloader\PackageManifestBootloader;
 use Chiron\Bootloader\MutationsBootloader;
-use Chiron\Bootloader\PublishableCollectionBootloader;
 use Chiron\Config\InjectableConfigInterface;
 use Chiron\Config\InjectableConfigMutation;
 use Chiron\Provider\ConfigureServiceProvider;
@@ -34,6 +33,10 @@ use Chiron\Filesystem\Exception\FilesystemException;
 use Chiron\Maintenance\Config\MaintenanceConfig;
 use Chiron\Filesystem\Filesystem;
 use Carbon\Carbon;
+
+//https://github.com/Eliud0730/tiendacafe/blob/3e1b9001daf4a2baf352568d9e37a022b2ea6cfd/vendor/magento/framework/App/MaintenanceMode.php
+//https://github.com/Eliud0730/tiendacafe/blob/3e1b9001daf4a2baf352568d9e37a022b2ea6cfd/vendor/magento/framework/App/Console/MaintenanceModeEnabler.php
+
 
 // TODO : utiliser cet exemple pour la gestion des IP :
 //*****************************************************
