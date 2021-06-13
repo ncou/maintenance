@@ -34,6 +34,11 @@ use Chiron\Maintenance\Config\MaintenanceConfig;
 use Chiron\Filesystem\Filesystem;
 use Carbon\Carbon;
 
+// TODO : utiliser un stub pour vérifier la présence d'un template précompilé et l'afficher :
+//https://github.com/laravel/laravel/blob/8.x/public/index.php#L19
+//https://github.com/laravel/framework/blob/8.x/src/Illuminate/Foundation/Console/stubs/maintenance-mode.stub
+//https://github.com/laravel/framework/blob/8.x/src/Illuminate/Foundation/Console/DownCommand.php#L69
+
 //https://github.com/Eliud0730/tiendacafe/blob/3e1b9001daf4a2baf352568d9e37a022b2ea6cfd/vendor/magento/framework/App/MaintenanceMode.php
 //https://github.com/Eliud0730/tiendacafe/blob/3e1b9001daf4a2baf352568d9e37a022b2ea6cfd/vendor/magento/framework/App/Console/MaintenanceModeEnabler.php
 
