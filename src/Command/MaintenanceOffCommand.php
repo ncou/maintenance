@@ -10,7 +10,6 @@ use Chiron\Core\Environment;
 use Chiron\Core\Command\AbstractCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Chiron\Application;
-use Chiron\Framework;
 
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Helper\Helper;
