@@ -43,22 +43,13 @@ final class CheckMaintenanceMiddleware implements MiddlewareInterface
         if ($this->maintenance->isOn() === true) {
             $details = $this->maintenance->getDetails();
 
-            throw new MaintenanceModeException($details['message'], $details['time'], $details['retry_after']);
+            throw new MaintenanceModeException(
+                $details['message'],
+                $details['time'],
+                $details['retry_after']
+            );
         }
 
         return $handler->handle($request);
-    }
-
-
-    public function process_TODO(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-    {
-        //@todo : add the ip adresses filtering in this middleware (cf data "allowed_ip" in the details array).
-        // TODO : faire plutot un if(! ->isOn) dans ce cas on fait le return. et en dessous on throw l'exception.
-        if (! $this->maintenance->isOn()) {
-            return $handler->handle($request);
-        }
-
-        $details = $this->maintenance->getDetails();
-        throw new MaintenanceModeException($details['message'], $details['time'], $details['retry_after']);
     }
 }
